@@ -10,7 +10,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    kitty
+    ghostty
     kdePackages.kcalc
     kdePackages.qtlocation
     kdePackages.krfb
