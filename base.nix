@@ -244,7 +244,6 @@
     calibre
     darktable
     github-desktop
-    discord
     handbrake
     kdePackages.kdenlive
     krita
