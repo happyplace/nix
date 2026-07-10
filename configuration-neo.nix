@@ -10,12 +10,10 @@
       /etc/nixos/hardware-configuration.nix
 
       ./base.nix
-      ./hyprland.nix
+      ./xfce.nix
     ];
 
   boot.initrd.luks.devices."root".crypttabExtraOpts = [ "tpm2-device=auto" ];
-  boot.initrd.luks.devices."home".crypttabExtraOpts = [ "tpm2-device=auto" ];
-  boot.initrd.luks.devices."swap".crypttabExtraOpts = [ "tpm2-device=auto" ];
 
   networking.hostName = "neo";
   environment.systemPackages = with pkgs; [
@@ -27,7 +25,7 @@
     enable = true;
     extraPackages = with pkgs; [
       # AMD GPU
-      mesa.drivers
+      mesa
       # For NVIDIA: nvidia-vaapi-driver
     ];
   };
