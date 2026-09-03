@@ -4,7 +4,7 @@
   boot.kernelPackages = pkgs.linuxPackages; # LTS
   # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "loglevel=3" "splash" "quiet" ];
-  # boot.kernelParams = [ "nosmt" "mitigations=auto"];
+  boot.kernelParams = [ "nosmt" "mitigations=auto" ];
   boot.plymouth.enable = true;
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.loader.systemd-boot.enable = true;
@@ -144,12 +144,12 @@
     zed-editor
     ffmpeg-full
     yt-dlp
-    python312Packages.yt-dlp-ejs # needed for deno maybe
+    # python312Packages.yt-dlp-ejs # needed for deno maybe
     deno
     mpv
     solaar
     logitech-udev-rules # udev rules for solaar
-    python314
+    python3
     libva
     libva-utils
     xeyes
@@ -166,10 +166,11 @@
     irssi
     efibootmgr
     syncthing
-    unityhub
     keepassxc
-    openfortivpn # vpn client used at behaviour
-    openfortivpn-webview # vpn client used at behaviour
+
+    # Work
+    #openfortivpn
+    #openfortivpn-webview
 
     # Codec
     gst_all_1.gstreamer
@@ -192,7 +193,7 @@
     unzip
 
     # Games
-    chiaki-ng
+    #chiaki-ng
 
     texliveFull # the FULL latex
 
@@ -228,6 +229,7 @@
     # neovim kickstart
     ripgrep
     fd
+    luaPackages.tree-sitter-cli
 
     # Zsh shell
     # zsh
@@ -253,8 +255,6 @@
     spotify
     texstudio
     transmission-remote-gtk
-    # moving this back to flatpak, it's using an old electron and it's complaining when I try to install
-    #bitwarden-desktop
     pavucontrol
     parsec-bin
     localsend

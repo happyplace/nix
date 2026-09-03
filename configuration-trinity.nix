@@ -10,7 +10,7 @@
       /etc/nixos/hardware-configuration.nix
 
       ./base.nix
-      ./plasma.nix
+      ./gnome.nix
     ];
 
     fileSystems."/home" =

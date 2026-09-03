@@ -19,5 +19,7 @@
     kdePackages.kdepim-runtime
     kdePackages.kimageformats
     kdePackages.libkdepim
+    gnome-keyring
+    libsecret # needed for gnome-keyring
   ];
 }
