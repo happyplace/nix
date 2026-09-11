@@ -10,7 +10,8 @@
       /etc/nixos/hardware-configuration.nix
 
       ./base.nix
-      ./gnome.nix
+      ./extended.nix
+      ./plasma.nix
     ];
 
     fileSystems."/home" =
@@ -34,6 +35,7 @@
     environment.systemPackages = with pkgs; [
       intel-gpu-tools
       epson-escpr
+      tailscale
     ];
 
     hardware.graphics = {

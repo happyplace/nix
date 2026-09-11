@@ -10,7 +10,7 @@
       /etc/nixos/hardware-configuration.nix
 
       ./base.nix
-      ./xfce.nix
+      ./plasma.nix
     ];
 
   boot.initrd.luks.devices."root".crypttabExtraOpts = [ "tpm2-device=auto" ];

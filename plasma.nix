@@ -5,11 +5,14 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
-  #environment.plasma6.excludePackages = with pkgs.kdePackages; [
-  #  konsole
-  #];
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+   konsole
+   kate
+   discover
+  ];
 
   environment.systemPackages = with pkgs; [
+    ghostty
     kdePackages.kcalc
     kdePackages.qtlocation
     kdePackages.krfb
@@ -19,7 +22,5 @@
     kdePackages.kdepim-runtime
     kdePackages.kimageformats
     kdePackages.libkdepim
-    gnome-keyring
-    libsecret # needed for gnome-keyring
   ];
 }

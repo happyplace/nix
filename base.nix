@@ -3,8 +3,7 @@
 {
   boot.kernelPackages = pkgs.linuxPackages; # LTS
   # boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "loglevel=3" "splash" "quiet" ];
-  boot.kernelParams = [ "nosmt" "mitigations=auto" ];
+  boot.kernelParams = [ "loglevel=3" "splash" "quiet" "nosmt" "mitigations=auto" ];
   boot.plymouth.enable = true;
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.loader.systemd-boot.enable = true;
@@ -13,7 +12,7 @@
 
   hardware.bluetooth.enable = true;
   hardware.logitech.wireless.enable = true;
-  hardware.xone.enable = true;
+  #hardware.xone.enable = true;
 
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -157,12 +156,11 @@
     killall
     google-chrome
     brave
-    tailscale
     pulseaudio # pactl
     mc
     ntfs3g
-    eza
-    bat
+    #eza
+    #bat
     irssi
     efibootmgr
     syncthing
@@ -171,6 +169,7 @@
     # Work
     #openfortivpn
     #openfortivpn-webview
+    parsec-bin
 
     # Codec
     gst_all_1.gstreamer
@@ -195,36 +194,9 @@
     # Games
     #chiaki-ng
 
-    texliveFull # the FULL latex
-
     # bcachefs
     keyutils # needed for "keyctl link @u @s" to fix mounting encrypted
     bcachefs-tools
-
-    # Vulkan Development
-    vulkan-headers
-    vulkan-loader
-    vulkan-validation-layers
-    vulkan-tools        # vulkaninfo
-    shaderc             # GLSL to SPIRV compiler - glslc
-    renderdoc           # Graphics debugger
-    tracy               # profiler
-    vulkan-tools-lunarg # vkconfig
-    glslang
-
-    # Development
-    sdl3
-    gdb
-    gcc
-    clang
-    cmakeWithGui
-    gnumake
-    assimp
-    rustup
-    zig
-    vscode
-    qtcreator
-    clang-tools
 
     # neovim kickstart
     ripgrep
@@ -238,26 +210,15 @@
     # zsh-syntax-highlighting
 
     # xbox one controller dongle
-    linuxPackages.xone # xbox controller dongle driver
-    linuxPackages_latest.xone # xbox controller dongle driver
+    #linuxPackages.xone # xbox controller dongle driver
+    #linuxPackages_latest.xone # xbox controller dongle driver
 
     # Packages that are usually flatpaks
-    blender
-    calibre
-    darktable
-    github-desktop
-    handbrake
-    kdePackages.kdenlive
-    krita
-    obs-studio
     protonup-qt
+    pavucontrol
     qpwgraph
     spotify
-    texstudio
     transmission-remote-gtk
-    pavucontrol
-    parsec-bin
-    localsend
     obsidian
   ];
 
@@ -266,13 +227,11 @@
       brave = super.brave.override {
         commandLineArgs = [
           "--enable-features=AcceleratedVideoDecodeLinuxGL"
-          "--password-store=gnome-libsecret"
         ];
       };
       google-chrome = super.google-chrome.override {
         commandLineArgs = [
           "--enable-features=AcceleratedVideoDecodeLinuxGL"
-          "--password-store=gnome-libsecret"
         ];
       };
     })
@@ -475,5 +434,5 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "26.05"; # Did you read the comment?
 }
