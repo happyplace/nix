@@ -225,7 +225,6 @@ in
     qpwgraph
     spotify
     transmission-remote-gtk
-    obsidian
 
     # unstable packages
     unstable.brave-origin
@@ -234,6 +233,11 @@ in
   nixpkgs.overlays = [
     (self: super: {
       brave = super.brave.override {
+        commandLineArgs = [
+          "--enable-features=AcceleratedVideoDecodeLinuxGL"
+        ];
+      };
+      brave-origin = super.brave-origin.override {
         commandLineArgs = [
           "--enable-features=AcceleratedVideoDecodeLinuxGL"
         ];
