@@ -1,5 +1,12 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
+# needed to have a mix of unstable and stable packages
+let
+  unstable = import inputs.nixpkgs-unstable {
+    system = pkgs.system;
+    config = { allowUnfree = true; };
+  };
+in
 {
   boot.kernelPackages = pkgs.linuxPackages; # LTS
   # boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -155,7 +162,6 @@
     btop
     killall
     google-chrome
-    brave
     pulseaudio # pactl
     mc
     ntfs3g
@@ -220,6 +226,9 @@
     spotify
     transmission-remote-gtk
     obsidian
+
+    # unstable packages
+    unstable.brave-origin
   ];
 
   nixpkgs.overlays = [
