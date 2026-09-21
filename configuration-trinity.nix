@@ -10,6 +10,7 @@
       /etc/nixos/hardware-configuration.nix
 
       ./base.nix
+      ./nix-ld.nix
       ./extended.nix
       ./plasma.nix
     ];
