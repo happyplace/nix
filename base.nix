@@ -171,11 +171,12 @@ in
     efibootmgr
     syncthing
     keepassxc
+    clinfo
 
     # Work
     #openfortivpn
     #openfortivpn-webview
-    parsec-bin
+    #parsec-bin
 
     # Codec
     gst_all_1.gstreamer

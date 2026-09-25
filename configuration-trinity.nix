@@ -44,6 +44,7 @@
       extraPackages = with pkgs; [
         # Intel GPU
         intel-media-driver
+        intel-compute-runtime # opencl
       ];
     };
 
