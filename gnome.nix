@@ -12,7 +12,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    ghostty
+    kitty
     ffmpegthumbnailer
     gnomeExtensions.caffeine
     gnomeExtensions.desktop-icons-ng-ding
